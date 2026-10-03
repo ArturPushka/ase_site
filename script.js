@@ -1,4 +1,6 @@
 const content = document.getElementById("content");
+const GOOGLE_SCRIPT_URL =
+    "https://script.google.com/macros/s/AKfycbwJKRn0_OqSIzX70xnlA0y56PnxYpjZKvj5Wd9176tP_QKKWxFQydiX0SPuxUw5nT8zGA/exec";
 const questionNumber = document.getElementById("questionNumber");
 const progressBar = document.getElementById("progressBar");
 
@@ -15,6 +17,16 @@ const answers = {
     facts: "",
     mood: ""
 };
+function sendAnswers() {
+    fetch(GOOGLE_SCRIPT_URL, {
+        method: "POST",
+        mode: "no-cors",
+        headers: {
+            "Content-Type": "text/plain;charset=utf-8"
+        },
+        body: JSON.stringify(answers)
+    });
+}
 
 
 // -------------------------
@@ -406,6 +418,7 @@ function questionSeven() {
 
             answers.mood =
                 document.getElementById("answer").value;
+            sendAnswers();
 
             finish();
         };
