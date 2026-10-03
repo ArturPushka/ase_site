@@ -1,0 +1,222 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-family: Arial, sans-serif;
+
+    background:
+        radial-gradient(circle at 10% 20%, #ff8fb1 0%, transparent 30%),
+        radial-gradient(circle at 90% 80%, #8ea7ff 0%, transparent 30%),
+        linear-gradient(135deg, #17152b, #28234a);
+
+    color: white;
+    padding: 20px;
+}
+
+.card {
+    width: 100%;
+    max-width: 700px;
+
+    padding: 45px;
+
+    background: rgba(255, 255, 255, 0.08);
+
+    border: 1px solid rgba(255, 255, 255, 0.15);
+
+    border-radius: 30px;
+
+    text-align: center;
+
+    box-shadow:
+        0 25px 70px rgba(0, 0, 0, 0.4);
+
+    backdrop-filter: blur(20px);
+}
+
+.progress {
+    width: 100%;
+    height: 8px;
+
+    background: rgba(255, 255, 255, 0.12);
+
+    border-radius: 20px;
+
+    overflow: hidden;
+
+    margin-bottom: 20px;
+}
+
+#progressBar {
+    width: 0%;
+    height: 100%;
+
+    background: linear-gradient(
+        90deg,
+        #ff6f9f,
+        #a78bfa,
+        #60a5fa
+    );
+
+    border-radius: 20px;
+
+    transition: width 0.4s ease;
+}
+
+#questionNumber {
+    min-height: 20px;
+
+    color: #c7c9e8;
+
+    font-size: 14px;
+
+    margin-bottom: 10px;
+}
+
+h1 {
+    font-size: 38px;
+
+    line-height: 1.25;
+
+    margin: 20px 0;
+}
+
+p {
+    font-size: 20px;
+
+    line-height: 1.6;
+
+    color: #e1e2f0;
+}
+
+.buttons {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    justify-content: center;
+
+    gap: 15px;
+
+    margin-top: 30px;
+}
+
+button {
+    border: none;
+
+    padding: 15px 25px;
+
+    border-radius: 15px;
+
+    font-size: 17px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    color: white;
+
+    background: rgba(255, 255, 255, 0.12);
+
+    transition:
+        transform 0.2s ease,
+        background 0.2s ease;
+}
+
+button:hover {
+    transform: translateY(-3px);
+
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.primary {
+    background: linear-gradient(
+        135deg,
+        #ff5f95,
+        #8b5cf6
+    );
+
+    box-shadow:
+        0 8px 25px rgba(139, 92, 246, 0.3);
+}
+
+.primary:hover {
+    background: linear-gradient(
+        135deg,
+        #ff78a7,
+        #9b72ff
+    );
+}
+
+textarea {
+    width: 100%;
+
+    min-height: 150px;
+
+    margin-top: 15px;
+
+    padding: 18px;
+
+    resize: vertical;
+
+    border-radius: 18px;
+
+    border: 1px solid rgba(255, 255, 255, 0.15);
+
+    outline: none;
+
+    background: rgba(255, 255, 255, 0.08);
+
+    color: white;
+
+    font-size: 17px;
+
+    font-family: Arial, sans-serif;
+}
+
+textarea::placeholder {
+    color: #a5a7c0;
+}
+
+textarea:focus {
+    border-color: #a78bfa;
+
+    box-shadow:
+        0 0 20px rgba(167, 139, 250, 0.2);
+}
+
+.final {
+    font-size: 44px;
+
+    color: #ff8fb1;
+}
+
+@media (max-width: 600px) {
+
+    .card {
+        padding: 30px 20px;
+    }
+
+    h1 {
+        font-size: 30px;
+    }
+
+    p {
+        font-size: 18px;
+    }
+
+    button {
+        width: 100%;
+    }
+
+    textarea {
+        min-height: 130px;
+    }
+}
